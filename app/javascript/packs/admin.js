@@ -1,4 +1,4 @@
-require.context('media/vendor/themes/admin/img', true, /\.(gif|jpg|png|svg|ico)$/i)
+require.context('vendor/themes/admin/img', true, /\.(gif|jpg|png|svg|ico)$/i)
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
