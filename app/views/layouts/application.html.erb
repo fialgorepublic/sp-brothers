@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>LeatherApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800" rel="stylesheet">
+    <%= stylesheet_pack_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+  <div class="wrapper">
+            <%= render partial: 'shared/header' if user_signed_in? %>
+            <div class="page-wrap">
+            <%= render partial: 'shared/sidebar' if user_signed_in? %>
+            
     <%= yield %>
+    </div>
+    </div>
   </body>
 </html>
