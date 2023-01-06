@@ -1,0 +1,27 @@
+<div class="app-sidebar colored">
+                <div class="sidebar-header">
+                    <a class="header-brand" href="index.html">
+                        <div class="logo-img">
+                            <h1><%= link_to "SP Brothers", root_path, class: "header-brand-img", style: 'color: #ffffff' %></h1>
+                           </div>
+                    </a>
+                    <button type="button" class="nav-toggle"><i data-toggle="expanded" class="ik ik-toggle-right toggle-icon"></i></button>
+                    <button id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></button>
+                </div>
+                
+                <div class="sidebar-content">
+                    <div class="nav-container">
+                        <nav id="main-menu-navigation" class="navigation-main">
+                            <div class="nav-item">
+                                <%= link_to admin_items_path do %>
+                                    <i class="ik ik-bar-chart-2"></i><span>Items</span>
+                                    <% end %>
+                            </div>
+                            
+                           
+                            
+                         
+                        </nav>
+                    </div>
+                </div>
+            </div>
