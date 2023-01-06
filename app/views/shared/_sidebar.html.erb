@@ -2,8 +2,10 @@
                 <div class="sidebar-header">
                     <a class="header-brand" href="index.html">
                         <div class="logo-img">
-                            <h1><%= link_to "SP Brothers", root_path, class: "header-brand-img", style: 'color: #ffffff' %></h1>
-                           </div>
+                            <%= link_to root_path do %>
+                                <%= image_pack_tag("media/vendor/themes/admin/img/Logo.png", size: '60x40', alt: 'Logo',class: 'header-brand-img')%>
+                              <% end %>
+                            </div>
                     </a>
                     <button type="button" class="nav-toggle"><i data-toggle="expanded" class="ik ik-toggle-right toggle-icon"></i></button>
                     <button id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></button>
