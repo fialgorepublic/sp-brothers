@@ -1,0 +1,73 @@
+<div class="main-content">
+                    <div class="container-fluid">
+                        <div class="page-header">
+                            <div class="row align-items-end">
+                                <div class="col-lg-8">
+                                    <div class="page-header-title">
+                                        <i class="ik ik-edit bg-blue"></i>
+                                        <div class="d-inline">
+                                            <h5>Edit Item</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="offset-md-2 col-md-8 offset-md-2">
+                                <div class="card">
+                                    <div class="card-header"><h3>Item</h3></div>
+                                    <div class="card-body">
+                                    <%= form_for @item, url: admin_item_path(@item) do |f| %>
+                                            <div class="form-group">
+                                                <label for="exampleInputUsername1">Number</label>
+                                                <%= f.text_field :number, class: 'form-control', placeholder: 'Item Number' %>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Name</label>
+                                                <%= f.text_field :name, class: 'form-control', placeholder: 'Item Name' %>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Price</label>
+                                                <%= f.number_field :price, class: 'form-control', placeholder: 'Item Price' %>
+                                                </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputConfirmPassword1">Picture</label>
+                                                <%= f.file_field :picture, class: 'form-control' %>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputConfirmPassword1">Product Picture</label>
+                                                <%= f.file_field :product_pictures, multiple: true, class: 'form-control' %>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="custom-control custom-radio">
+                                                    <%= f.check_box :active_item, class: 'custom-control-input' %>
+                                                    <span class="custom-control-label">Active Item</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-group">
+                                            <label class="custom-control custom-radio">
+                                                <%= f.check_box :special_price_item, class: 'custom-control-input' %>
+                                                <span class="custom-control-label">Special Price Item</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                               
+                                          <%= f.fields_for :colors do |color| %>
+                                            <%= render "color_fields", :f => color %>
+                                          <% end %>
+                                          <div>
+                                            <br>
+                                            <%= link_to_add_association "Add Color", f, :colors, class: 'btn btn-success' %>
+                                          </div>
+                                        </div>
+                                        <%= f.submit "Save", class: 'btn btn-primary mr-2' %>
+                                            <%= link_to 'Cancel', admin_items_path, class: 'btn btn-light' %>
+                                          <% end %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
