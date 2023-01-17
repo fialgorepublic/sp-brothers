@@ -2,21 +2,34 @@
   <div class="form-group field">
     <label for="color">Color</label>
     <br>
-    <%= f.color_field :code, class: '', placeholder: 'Item Color' %>
+    <div class='colorPickSelector'>
+    <%= f.hidden_field :code, value: f.object.code.present? ? f.object.code : nil %>
+    </div>
     </div>
   <div class='form-group field'>
   <label for="quantity">Quantity</label>
   <%= f.number_field :quantities, class: 'form-control', placeholder: 'Item Quantity' %>
     </div>
     <div class='form-group field'>
+    <label for="quantity">Order Quantity</label>
+    <%= f.number_field :order_quantities, class: 'form-control', placeholder: 'Item Quantity' %>
+      </div>
+    <div class='form-group field'>
     <label for="availableDate">Avaiable Date</label>
     <br>
     <%= f.date_field :available_date, class: 'form-control', placeholder: 'Item Quantity' %>
       </div>
       <div class='form-group field'>
-      <%= f.label :picture %>
       <label for="picture">Color Picture</label>
       <%= f.file_field :pictures, class: 'form-control',  multiple: true %>
         </div>
   <%= link_to_remove_association "Remove Color", f, class: 'btn btn-danger' %>
 </div>
+
+
+<script>
+  $(".colorPickSelector").colorPick();
+  $('.add_fields').click(function(){
+    $(".colorPickSelector").colorPick();
+  })
+</script>
