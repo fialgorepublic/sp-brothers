@@ -12,9 +12,9 @@ require("vendor/themes/admin/node_modules/bootstrap/dist/css/bootstrap.css")
 require("vendor/themes/admin/node_modules/@fortawesome/fontawesome-free/css/all.css")
 require("vendor/themes/admin/node_modules/ionicons/dist/css/ionicons.css")
 require("vendor/themes/admin/node_modules/icon-kit/dist/css/iconkit.css")
-require("vendor/themes/admin/node_modules/perfect-scrollbar/css/perfect-scrollbar.css")
 require("vendor/themes/admin/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css")
 require("vendor/themes/admin/dist/css/theme.css")
+require("vendor/themes/admin/dist/css/colorPick.css")
 
 // require("vendor/themes/admin/src/js/vendor/jquery-3.3.1.min.js")
 // require("vendor/themes/admin/node_modules/popper.js/dist/umd/popper.min.js")
@@ -25,5 +25,9 @@ require("vendor/themes/admin/node_modules/datatables.net/js/jquery.dataTables.mi
 require("vendor/themes/admin/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js")
 require("vendor/themes/admin/dist/js/theme.min.js")
 require("vendor/themes/admin/js/datatables.js")
+require("vendor/themes/admin/js/colorPick.js")
 
 require("@nathanvda/cocoon")
+
+window.jQuery = $;
+window.$ = $;

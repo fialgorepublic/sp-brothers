@@ -61,7 +61,7 @@
                                                                 <%= link_to edit_admin_item_path(item) do %>
                                                                     <i class="ik ik-edit-2"></i>
                                                                     <% end %>
-                                                                    <%= link_to admin_item_path(item), method: :delete do %>
+                                                                    <%= link_to admin_item_path(item), method: :delete, data: {:confirm => 'Are you sure?'} do %>
                                                                         <i class="ik ik-trash-2"></i>
                                                                         <% end %>
                                                         </div>
