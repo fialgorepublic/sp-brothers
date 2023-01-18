@@ -15,7 +15,6 @@ class AuthenticateUser
   attr_accessor :phone_no, :password
   
   def user
-    debugger
     user = User.find_by_phone_no(phone_no)
     return user if user && user.valid_password?(password)
     errors.add :user_authentication, 'Invalid Credentials'
