@@ -30,3 +30,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
 gem 'devise'
+gem 'jwt'
+gem 'simple_command'

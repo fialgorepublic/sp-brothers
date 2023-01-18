@@ -24,7 +24,7 @@
                                         <label for="exampleInputUsername1">Category</label>
                                         <%= f.select :category, options_for_select(Item.categories.map { |key, value| 
                                         [key, value]
-                                      }, @item.category), {}, {class: 'form-control'} %>
+                                      }, @item.category), {prompt: 'Select Category'}, {class: 'form-control'} %>
                                     </div>   
                                             <div class="form-group">
                                                 <label for="exampleInputUsername1">Number</label>

@@ -1,14 +1,14 @@
 class Admin::ItemsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_item, only: %i[show edit destroy update]
+
   def index
     @items = Item.all
   end
 
   def new
     @item = Item.new
-     
     @colors = @item.colors.build
-
   end
 
   def create
