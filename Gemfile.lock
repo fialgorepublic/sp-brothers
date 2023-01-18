@@ -101,6 +101,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jwt (2.6.0)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -189,6 +190,7 @@ GEM
       sprockets-rails
       tilt
     semantic_range (3.0.0)
+    simple_command (1.0.1)
     spring (4.1.0)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
@@ -234,12 +236,14 @@ DEPENDENCIES
   devise
   dotenv-rails (~> 2.8, >= 2.8.1)
   jbuilder (~> 2.7)
+  jwt
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.7)
   sass-rails (>= 6)
+  simple_command
   spring
   turbolinks (~> 5)
   tzinfo-data
