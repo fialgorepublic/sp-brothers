@@ -1,0 +1,2 @@
+class ContactSupport < ApplicationRecord
+end
