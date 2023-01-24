@@ -14,13 +14,13 @@ class Admin::ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to admin_items_path	
-      else
-        render 'new'
+      redirect_to admin_items_path
+    else
+      render 'new'
     end
   end
 
-  def show;  end
+  def show; end
 
   def edit; end
 
@@ -46,11 +46,11 @@ class Admin::ItemsController < ApplicationController
 
   private
 
-    def item_params
-      params.require(:item).permit(:number, :name, :price, :active_item, :category, :special_price_item, :picture, {product_pictures: []}, colors_attributes: [:id, :code, :quantities, :order_quantities, :available_date, {pictures: []}, :_destroy])
-    end
+  def item_params
+    params.require(:item).permit(:number, :name, :price, :active_item, :category, :special_price_item, :picture, { product_pictures: [] }, colors_attributes: [:id, :code, :quantities, :order_quantities, :available_date, { pictures: [] }, :_destroy])
+  end
 
-    def find_item
-      @item = Item.find(params[:id])
-    end
+  def find_item
+    @item = Item.find(params[:id])
+  end
 end

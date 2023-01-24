@@ -1,34 +1,38 @@
 <div class="app-sidebar colored">
-                <div class="sidebar-header">
-                    <a class="header-brand" href="index.html">
-                        <div class="logo-img">
-                            <%= link_to root_path do %>
-                                <%= image_pack_tag("media/vendor/themes/admin/img/Logo.png", size: '60x40', alt: 'Logo',class: 'header-brand-img')%>
-                              <% end %>
-                            </div>
-                    </a>
-                    <button type="button" class="nav-toggle"><i data-toggle="expanded" class="ik ik-toggle-right toggle-icon"></i></button>
-                    <button id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></button>
-                </div>
-                
-                <div class="sidebar-content">
-                    <div class="nav-container">
-                        <nav id="main-menu-navigation" class="navigation-main">
-                            <div class="nav-item">
-                                <%= link_to admin_items_path do %>
-                                    <i class="ik ik-bar-chart-2"></i><span>Items</span>
-                                    <% end %>
-                            </div>
-                            <div class="nav-item">
-                                <%= link_to admin_request_samples_path do %>
-                                    <i class="ik ik-bar-chart-2"></i><span>Sample Requests</span>
-                                    <% end %>
-                            </div>
-                            
-                           
-                            
-                         
-                        </nav>
-                    </div>
-                </div>
-            </div>
+  <div class="sidebar-header">
+    <a class="header-brand" href="index.html">
+      <div class="logo-img">
+        <%= link_to root_path do %>
+          <%= image_pack_tag("media/vendor/themes/admin/img/Logo.png", size: '60x40', alt: 'Logo', class: 'header-brand-img') %>
+        <% end %>
+      </div>
+    </a>
+    <button type="button" class="nav-toggle"><i data-toggle="expanded" class="ik ik-toggle-right toggle-icon"></i>
+    </button>
+    <button id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></button>
+  </div>
+
+  <div class="sidebar-content">
+    <div class="nav-container">
+      <nav id="main-menu-navigation" class="navigation-main">
+        <div class="nav-item">
+          <%= link_to admin_items_path do %>
+            <i class="ik ik-bar-chart-2"></i><span>Items</span>
+          <% end %>
+        </div>
+        <div class="nav-item">
+          <%= link_to admin_request_samples_path do %>
+            <i class="ik ik-bar-chart-2"></i><span>Sample Requests</span>
+          <% end %>
+        </div>
+        <div class="nav-item">
+          <%= link_to admin_contact_supports_path do %>
+            <i class="ik ik-bar-chart-2"></i><span>Contact Support</span>
+          <% end %>
+        </div>
+
+
+      </nav>
+    </div>
+  </div>
+</div>
