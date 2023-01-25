@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     resources :request_samples
     resources :contact_supports
     resources :users
-    end
+  end
+  get 'privacy_policy', to: 'home#privacy_policy'
   root to: 'admin/items#index'
   namespace :api do
     namespace :v1 do
