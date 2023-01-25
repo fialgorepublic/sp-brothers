@@ -1,90 +1,78 @@
-
-                <div class="main-content">
-                    <div class="container-fluid">
-                        <div class="page-header">
-                            <div class="row align-items-end">
-                                <div class="col-lg-8">
-                                    <div class="page-header-title">
-                                        <i class="ik ik-inbox bg-blue"></i>
-                                        <div class="d-inline">
-                                            <h5>Items</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <nav class="breadcrumb-container" aria-label="breadcrumb">
-                                        <%= link_to "New Item", new_admin_item_path, class: 'btn btn-primary' %>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-header"><h3>All Items</h3></div>
-                                    <div class="card-body">
-                                        <table id="data_table" class="table">
-                                            <thead>
-                                                <tr>
-                                                <th>Category</th>
-                                                    <th>Number</th>
-                                                    <th>Name</th>
-                                                    <th>Price</th>
-                                                    <th class="nosort">Picture</th>
-                                                    <th class="nosort">Product Picture</th>
-                                                    <th>Active Item</th>
-                                                    <th>Special Price Item</th>
-                                                    <th class="nosort">&nbsp;</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            <% @items.each do |item| %>
-                                                <tr>
-                                                <td><%= item.category%></td>
-                                                    <td><%= item.number%></td>
-                                                    <td><%= item.name%></td>
-                                                    <td><%= item.price %></td>
-                                                    <td><%= image_tag item.picture.url, class: "table-user-thumb", alt: "" if item.picture.present? %></td>
-                                                    <td><%= image_tag item.product_pictures.first.url, class: "table-user-thumb", alt: "" if item.product_pictures.any? %></td>
-                                                    <td><%= item.active_item%></td>
-                                                    <td><%= item.special_price_item %></td>
-                                                    
-                                                    <td>
-                                                        <div class="table-actions">
-                                                            <%= link_to admin_item_path(item) do %>
-                                                                <i class="ik ik-eye"></i>
-                                                                <% end %>
-                                                                <%= link_to edit_admin_item_path(item) do %>
-                                                                    <i class="ik ik-edit-2"></i>
-                                                                    <% end %>
-                                                                    <%= link_to admin_item_path(item), method: :delete, data: {:confirm => 'Are you sure?'} do %>
-                                                                        <i class="ik ik-trash-2"></i>
-                                                                        <% end %>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <% end %>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-
-
-                <footer class="footer">
-                    <div class="w-100 clearfix">
-                        <span class="text-center text-sm-left d-md-inline-block">Copyright © 2018 ThemeKit v2.0. All Rights Reserved.</span>
-                        <span class="float-none float-sm-right mt-1 mt-sm-0 text-center">Crafted with <i class="fa fa-heart text-danger"></i> by <a href="http://lavalite.org/" class="text-dark" target="_blank">Lavalite</a></span>
-                    </div>
-                </footer>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="page-header">
+      <div class="row align-items-end">
+        <div class="col-lg-8">
+          <div class="page-header-title">
+            <i class="ik ik-inbox bg-blue"></i>
+            <div class="d-inline">
+              <h5>Items</h5>
             </div>
+          </div>
         </div>
+        <div class="col-lg-4">
+          <nav class="breadcrumb-container" aria-label="breadcrumb">
+            <%= link_to "New Item", new_admin_item_path, class: 'btn btn-primary' %>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header"><h3>All Items</h3></div>
+          <div class="card-body">
+            <table id="data_table" class="table">
+              <thead>
+              <tr>
+                <th>Category</th>
+                <th>Number</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th class="nosort">Picture</th>
+                <th class="nosort">Product Picture</th>
+                <th>Active Item</th>
+                <th>Special Price Item</th>
+                <th class="nosort">&nbsp;</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @items.each do |item| %>
+                <tr>
+                  <td><%= item.category %></td>
+                  <td><%= item.number %></td>
+                  <td><%= item.name %></td>
+                  <td><%= item.price %></td>
+                  <td><%= image_tag item.picture.url, class: "table-user-thumb", alt: "" if item.picture.present? %></td>
+                  <td><%= image_tag item.product_pictures.first.url, class: "table-user-thumb", alt: "" if item.product_pictures.any? %></td>
+                  <td><%= item.active_item %></td>
+                  <td><%= item.special_price_item %></td>
+
+                  <td>
+                    <div class="table-actions">
+                      <%= link_to admin_item_path(item) do %>
+                        <i class="ik ik-eye"></i>
+                      <% end %>
+                      <%= link_to edit_admin_item_path(item) do %>
+                        <i class="ik ik-edit-2"></i>
+                      <% end %>
+                      <%= link_to admin_item_path(item), method: :delete, data: { :confirm => 'Are you sure?' } do %>
+                        <i class="ik ik-trash-2"></i>
+                      <% end %>
+                    </div>
+                  </td>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
         
         
