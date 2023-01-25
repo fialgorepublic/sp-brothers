@@ -20,6 +20,13 @@
           <div class="card-header"><h3>Item</h3></div>
           <div class="card-body">
             <%= form_for @item, url: admin_items_path do |f| %>
+              <% if @item.errors.any? %>
+                <ul>
+                <% @item.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              <% end %>
               <div class="form-group">
                 <label for="exampleInputUsername1">Category</label>
                 <%= f.select :category, options_for_select(Item.categories.map { |key, value|

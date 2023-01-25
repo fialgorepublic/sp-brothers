@@ -41,7 +41,13 @@
                                                 <td><%= sample.email%></td>
                                                 <td><%= sample.business_name %></td>
                                                 <td><%= sample.address%></td>
-                                                <td><%= link_to 'View Item', admin_item_path(sample.item.id) %></td>
+                                                <td>
+                                                <% if sample.full_catalog? %>
+                                                <h6>Full Catalog</h6>
+                                                <% else%>
+                                                <%= link_to 'View Item', samples_admin_request_sample_path(sample.id) %>
+                                                <% end %>
+                                                </td>
                                                 
                                                 <td>
                                                     <div class="table-actions">

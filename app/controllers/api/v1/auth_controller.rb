@@ -1,5 +1,5 @@
 class Api::V1::AuthController < Api::BaseController
-  skip_before_action :authenticate_user
+  skip_before_action :authenticate_user, except: [:logout]
   before_action :find_user, only: [:update]
 
   def create
@@ -18,6 +18,11 @@ class Api::V1::AuthController < Api::BaseController
     else
       json_error_response('something went wrong', @user.errors)
     end
+  end
+
+  def logout
+    current_user.update(auth_token: nil)
+    json_success_response('Logged Out.')
   end
 
   def authenticate

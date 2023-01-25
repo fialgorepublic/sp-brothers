@@ -1,5 +1,5 @@
 class Admin::RequestSamplesController < ApplicationController
-  before_action :find_sample, only: [:show, :destroy]
+  before_action :find_sample, only: [:show, :destroy, :samples]
 
   def index
     @samples = RequestSample.all
@@ -14,6 +14,8 @@ class Admin::RequestSamplesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def samples; end
 
   private
 

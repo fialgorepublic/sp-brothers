@@ -46,8 +46,10 @@
                       <%#= link_to admin_request_sample_path(sample) do %>
 <!--                        <i class="ik ik-eye"></i>-->
                       <%# end %>
+                      <% unless sample.Admin? %>
                       <%= link_to admin_user_path(sample), method: :delete, data: {:confirm => 'Are you sure?'} do %>
                         <i class="ik ik-trash-2"></i>
+                      <% end %>
                       <% end %>
 <!--                    </div>-->
                   </td>

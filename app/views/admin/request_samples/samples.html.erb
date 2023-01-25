@@ -1,0 +1,63 @@
+<div class="main-content">
+<div class="container-fluid">
+    <div class="page-header">
+        <div class="row align-items-end">
+            <div class="col-lg-8">
+                <div class="page-header-title">
+                    <i class="ik ik-file-text bg-blue"></i>
+                    <div class="d-inline">
+                        <h5>Request Sample</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        
+        <div class="offset-2 col-lg-8 offset-2">
+            <div class="card">
+                <ul class="nav nav-pills custom-pills" id="pills-tab" role="tablist">
+                    
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    
+                    <div >
+                            <% @sample.colors.each do |color| %>
+                            <h6 class="mt-30"><span class="pull-right">Color</span></h6>
+                            
+                            <% if color.code.present?%>
+                            <div class="" style="width: 100px; height: 100px; background: <%= color.code %>">
+                                
+                            </div>
+                            <% end %>
+                              <h6 class="mt-30"><span class="pull-right">Quantity</span></h6>
+                              <div class="">
+                                  <%= color.quantities %>
+                              </div>
+                              <h6 class="mt-30"><span class="pull-right">Order Quantities</span></h6>
+                              <div class="">
+                                  <%= color.order_quantities %>
+                              </div>
+                              <h6 class="mt-30"><span class="pull-right">Avaliable date</span></h6>
+                              <div class="">
+                                  <%= color.available_date %>
+                              </div>
+                              <h6 class="mt-30"><span class="pull-right">Pictures</span></h6>
+                              
+                              <div class="row">
+                                  <% if color && color&.pictures.present? %>
+                                  <% color.pictures.each do |picture| %>
+                                    <div class="col-lg-3 col-md-6 mb-20"><%= image_tag picture.url, class:"img-fluid rounded" %></div>
+                                   <% end %> 
+                                   <% end %>
+                              
+                              <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
