@@ -12,9 +12,8 @@ Rails.application.routes.draw do
       post "login", to: "auth#authenticate"
       post "profile_update", to: "auth#update"
       post "create_contact_support", to: "contact_support#create_contact_support"
-      resources :items do
-        resources :request_samples
-      end
+      resources :items
+      resources :request_samples
     end
   end
 end

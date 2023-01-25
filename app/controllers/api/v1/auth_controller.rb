@@ -28,7 +28,7 @@ class Api::V1::AuthController < Api::BaseController
       user.update!(auth_token: command.result[:token])
       json_success_response('Login Successful', { user: user })
     else
-      json_error_response('Your Email or Password is incorrect. Please try again.')
+      json_error_response('Your Phone Number or Password is incorrect. Please try again.')
     end
   end
 
