@@ -1,5 +1,5 @@
 class RequestSample < ApplicationRecord
-    belongs_to :color, optional: true
+    has_many :colors
 
     validates :full_name, :address, :mobile_no, presence: true
 end

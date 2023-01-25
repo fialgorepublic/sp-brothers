@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_24_102052) do
+ActiveRecord::Schema.define(version: 2023_01_25_104704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cart_colors", force: :cascade do |t|
+    t.integer "color_id"
+    t.integer "cart_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "color_items", force: :cascade do |t|
     t.integer "item_id"
@@ -30,6 +43,7 @@ ActiveRecord::Schema.define(version: 2023_01_24_102052) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "order_quantities"
+    t.integer "request_sample_id"
   end
 
   create_table "contact_supports", force: :cascade do |t|
@@ -61,9 +75,9 @@ ActiveRecord::Schema.define(version: 2023_01_24_102052) do
     t.string "email"
     t.string "business_name"
     t.string "address"
-    t.integer "item_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "full_catalog", default: false
   end
 
   create_table "users", force: :cascade do |t|

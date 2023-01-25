@@ -15,7 +15,9 @@ Rails.application.routes.draw do
       post "profile_update", to: "auth#update"
       post "create_contact_support", to: "contact_support#create_contact_support"
       resources :items
-      resources :request_samples
+      resources :request_samples do
+        post :add_to_cart, on: :collection
+      end
     end
   end
 end

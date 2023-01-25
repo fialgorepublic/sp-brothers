@@ -6,7 +6,8 @@ class User < ApplicationRecord
 
   validates :phone_no, presence: true
   validates :phone_no, uniqueness: true
-
+  has_one :cart
+ 
   enum role: {
 		'Admin': 'admin',
     'User': 'user'
