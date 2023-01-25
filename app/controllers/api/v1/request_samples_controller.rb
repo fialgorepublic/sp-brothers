@@ -14,7 +14,6 @@ class Api::V1::RequestSamplesController < Api::BaseController
   def add_to_cart
     color = Color.find params[:color_id]
     if current_user.cart.present?
-      debugger
       @user_cart =  current_user.cart.colors << color
     else
       current_user.create_cart
