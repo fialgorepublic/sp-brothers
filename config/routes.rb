@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :items
     resources :request_samples
     resources :contact_supports
+    resources :users
     end
   root to: 'admin/items#index'
   namespace :api do
